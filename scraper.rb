@@ -6,11 +6,9 @@ require 'mechanize'
 
 agent = Mechanize.new
 
-# # Read in a page
 page = agent.get("http://theodi.org/blog/")
-#
-# # Find somehing on the page using css selectors
-p page.at('h1.module-heading')
+
+p page.xpath('//h1.module-heading')
 #
 # # Write out to the sqlite database using scraperwiki library
 # ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
